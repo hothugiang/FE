@@ -21,12 +21,12 @@ export default function HotelDetail() {
           </div>
           <div className="ml-auto text-right">
             <h1>Giá/phòng/đêm/từ</h1>
-            <h1 className="font-bold text-2xl text-[#bb6060]">
+            <h1 className="font-bold text-lg lg:text-2xl text-[#bb6060]">
               {hotel.minPrice} VND
             </h1>
             <Button
               type="primary"
-              className="bg-[#d65b0f] w-[240px] mt-3 text-xl h-[40px]"
+              className="bg-[#d65b0f] w-[150px] lg:w-[240px] mt-3 text-md lg:text-xl h-[40px]"
               //   onClick={scrollToEmptyRooms}
             >
               {" "}
@@ -59,12 +59,22 @@ export default function HotelDetail() {
           <p>Bạn muốn đặt phòng vào thời gian nào?</p>
         </div>
 
-        <Space direction="vertical" size={12} className="flex-row">
-          <RangePicker className="w-[70vw]" />
-          <Button type="primary" icon={<SearchOutlined />} className="w-[8vw]">
-            Tìm kiếm
-          </Button>
-        </Space>
+        <div className="w-full flex justify-center">
+          <div className="w-full flex justify-center">
+            <div className="w-3/4">
+              <RangePicker className="w-full" />
+            </div>
+            <div className="w-1/4 ml-2">
+              <Button
+                type="primary"
+                icon={<SearchOutlined />}
+                className="w-full text-xs lg:text-sm"
+              >
+                Tìm kiếm
+              </Button>
+            </div>
+          </div>
+        </div>
 
         <div className="block max-w-[100%] p-6 bg-white border border-gray-200 rounded-lg shadow my-6">
           {/* <h1 className="font-bold text-xl mb-3 ml-2">Tên loại phòng</h1>

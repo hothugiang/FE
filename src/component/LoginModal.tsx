@@ -42,8 +42,7 @@ const LoginModal = ({ visible, onCancel, onLogin, onSignup }: any) => {
               className="ml-2 cursor-pointer font-bold text-blue-500 hover:scale-110"
               onClick={onSignup}
             >
-              {" "}
-              Đăng ký{" "}
+              Đăng ký
             </p>
           </div>
 
