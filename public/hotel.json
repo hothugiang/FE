@@ -1,0 +1,100 @@
+[
+    {
+        "id": "lotte",
+        "name": "Lotte Hotel Hà Nội",
+        "location": "54 P. Liễu Giai, Cống Vị, Ba Đình, Hà Nội 100000",
+        "province": "Hà Nội",
+        "minPrice": "2.120.476",
+        "img": "../src/assets/180712-4-2000-ove-hanoi-hotel.jpg.thumb.768.768.jpg",
+        "discription": "Toạ lạc tại góc cắt giữa hai phố Liễu Giai và Đào Tấn thuộc quận Ba Đình, KHÁCH SẠN LOTTE HÀ NỘI là sự kết nối và tổng hoà giữa khu phố cổ Hà Nội giàu truyền thống và khu đô thị mới đang ngày một phát triển với tương lai tươi sáng."
+    },
+    {
+        "id": "palace",
+        "name": "Khách sạn Palace SaiGon",
+        "location": "56 - 66 Nguyễn Huệ, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh, Việt Nam, 700000",
+        "province": "TP Hồ Chí Minh",
+        "minPrice": "1.190.476",
+        "img": "../src/assets/ks1.webp",
+        "discription": "Lưu trú tại Palace Hotel Saigon là một lựa chọn đúng đắn khi quý khách đến thăm Bến Nghé. Hãy sẵn sàng đón nhận trải nghiệm khó quên bằng dịch vụ độc đáo và hoàn hảo của khách sạn cùng các tiện nghi đầy đủ, đáp ứng mọi nhu cầu của quý khách. Trung tâm thể dục của khách sạn là một trong những tiện nghi không thể bỏ qua khi lưu trú tại đây. Hưởng thụ một ngày thư thái đầy thú vị tại hồ bơi dù quý khách đang du lịch một mình hay cùng người thân. Quầy tiếp tân 24 giờ luôn sẵn sàng phục vụ quý khách từ thủ tục nhận phòng đến trả phòng hay bất kỳ yêu cầu nào. Nếu cần giúp đỡ xin hãy liên hệ đội ngũ tiếp tân, chúng tôi luôn sẵn sàng hỗ trợ quý khách."
+    },
+    {
+        "id": "diamond",
+        "name": "Diamond Westlake Suite",
+        "location": "96 Đ. Tô Ngọc Vân, Quảng An, Tây Hồ, Hà Nội",
+        "province": "Hà Nội",
+        "minPrice": "1.960.000",
+        "img": "../src/assets/diamondwestlake.jpg"
+    },
+    {
+        "id": "hiddencharm",
+        "name": "Hidden Charm Ninh Bình",
+        "location": "No 9, Tam Coc - Bich Dong Tourist Center, Hoa Lư, Ninh Bình",
+        "province": "Ninh Bình",
+        "minPrice": "1.590.000",
+        "img": "../src/assets/hiddencharm.jpg"
+    },
+    {
+        "id": "muongthanh",
+        "name": "Khách sạn Mường Thanh",
+        "location": "Số 8A Mạc Đĩnh Chi, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh, Việt Nam, 700000",
+        "province": "TP Hồ Chí Minh",
+        "minPrice": "1.435.714",
+        "img": "../src/assets/muongthanh.jpg"
+    },
+    {
+        "id": "mulne",
+        "name": "Mulne Bay Resort",
+        "location": "Khu Phố 14, Phường Mũi Né, Phường Mũi Né, Phan Thiết, Bình Thuận, Việt Nam, 801117",
+        "minPrice": "1.309.524",
+        "province": "Bình Thuận",
+        "img": "../src/assets/mulne.webp"
+    },
+    {
+        "id": "sapa",
+        "name": "Amarin Resort & Spa Phu Quoc",
+        "location": "Cửa Lập Hamlet, Trần Hưng Đạo, Dương Đông, Kiên Giang, Thị trấn Dương Đông, Phú Quốc, Tỉnh Kiên Giang, Việt Nam, 920000",
+        "minPrice": "1.022.222",
+        "province": "Kiên Giang",
+        "img": "../src/assets/spa.webp"
+    },
+    {
+        "id": "vungtau",
+        "name": "Khách sạn Imperial Vũng Tàu",
+        "location": "159 Thùy Vân, Thắng Tam, Thành phố Vũng Tàu, Bà Rịa - Vũng Tàu, Việt Nam, 793918",
+        "minPrice": "2.366.400",
+        "province": "Bà Rịa - Vũng Tàu",
+        "img": "../src/assets/vungtau.webp"
+    },
+    {
+        "id": "nol",
+        "name": "Nolis Hotel Vũng Tàu",
+        "location": "19 Thùy Vân, Phường 2, Thành phố Vũng Tàu, Bà Rịa - Vũng Tàu, Việt Nam, 791015",
+        "minPrice": "686.654",
+        "province": "Bà Rịa - Vũng Tàu",
+        "img": "../src/assets/nol.webp"
+    },
+    {
+        "id": "dalat",
+        "name": "Terracotta Hotel & Resort Đà Lạt",
+        "location": "Phân khu chức năng 7.9, KDL hồ Tuyền Lâm, Phường 3, Đà Lạt, Tỉnh Lâm Đồng, Việt Nam, 670000",
+        "minPrice": "1.542.593",
+        "province": "Lâm Đồng",
+        "img":"../src/assets/dalat.webp"
+    },
+    {
+        "id": "col",
+        "name": "Hotel Colline Dalat",
+        "location": "10 Phan Bội Châu, Phường 1, Đà Lạt, Tỉnh Lâm Đồng, Việt Nam, 670000",
+        "minPrice": "1.752.096",
+        "province": "Lâm Đồng",
+        "img": "../src/assets/col.webp"
+    },
+    {
+        "id": "gol",
+        "name": "Golf Valley Hotel",
+        "location": "94 Bùi Thị Xuân, Phường 2, Đà Lạt, Tỉnh Lâm Đồng, Việt Nam, 670000",
+        "minPrice": "1.579.201",
+        "province": "Lâm Đồng",
+        "img": "../src/assets/golf.webp"
+    }
+]
