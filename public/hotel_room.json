@@ -1,0 +1,80 @@
+[
+    {
+        "hotelId": "lotte",
+        "id": "loteestandard",
+        "name": "Standard",
+        "img": "../src/assets/room1.webp",
+        "area": "22 - 26 m2",
+        "facilities": ["SINGLE_BEDROOM", "SOUND_PROOF"],
+        "room": [
+            {
+                "id": "standard1",
+                "name": "Standard Single",
+                "capacity": 1,
+                "area": 22,
+                "price": "2.120.476",
+                "cancelFee": false
+            },
+            {
+                "id": "standard2",
+                "name": "Standard Double",
+                "capacity": 2,
+                "area": 26,
+                "price": "2.890.463",
+                "cancelFee": false
+            }
+        ]
+    },
+    {
+        "hotelId": "lotte",
+        "id": "lottesuperior",
+        "name": "Superior",
+        "img": "../src/assets/room2.webp",
+        "area": "25 - 35 m2",
+        "facilities": ["DOUBLE_BEDROOM", "SOUND_PROOF"],
+        "room": [
+            {
+                "id": "superior1",
+                "name": "Superior Double",
+                "capacity": 2,
+                "area": 25,
+                "price": "3.125.648",
+                "cancelFee": false
+            },
+            {
+                "id": "superior2",
+                "name": "Superior Double - Twin",
+                "capacity": 4,
+                "area": 35,
+                "price": "4.235.839",
+                "cancelFee": true
+            }
+        ]
+    },
+    {
+        "hotelId": "lotte",
+        "id": "lottedeluxe",
+        "name": "Deluxe",
+        "img": "../src/assets/twin.webp",
+        "area": "40 - 50 m2",
+        "facilities": ["DOUBLE_BEDROOM", "SOUND_PROOF", "TELEVISION"],
+        "room": [
+            {
+                "id": "deluxe1",
+                "name": "Deluxe King",
+                "capacity": 2,
+                "area": 40,
+                "price": "5.729.638",
+                "cancelFee": true
+            },
+            {
+                "id": "deluxe2",
+                "name": "Deluxe Double",
+                "capacity": 4,
+                "area": 50,
+                "price": "7.489.376",
+                "cancelFee": true
+            }
+        ]
+    }
+]

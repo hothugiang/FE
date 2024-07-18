@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   EnvironmentFilled,
   MinusOutlined,
@@ -27,7 +27,7 @@ export default function Home() {
   const hotelsPerPage: number = 8;
 
   useEffect(() => {
-    fetch("../../public/hotel.json")
+    fetch("/hotel.json")
       .then((response) => response.json())
       .then((data) => {
         setData(data);
