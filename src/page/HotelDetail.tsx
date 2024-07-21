@@ -17,7 +17,9 @@ export default function HotelDetail() {
       .then((response) => response.json())
       .then((data) => {
         setData(data);
-        setRoomList(data);
+        
+        const filterRoomList = data.filter((room: any) => room.hotelId === hotel.id)
+        setRoomList(filterRoomList);
       })
       .catch((error) => {
         console.error("Lỗi lấy data:", error);
@@ -94,12 +96,15 @@ export default function HotelDetail() {
             </div>
           </div>
         </div>
-        {roomList.map((hotelRoom: any) => (
+        {(roomList.length > 0) ? (roomList.map((hotelRoom: any) => (
           <div key={hotelRoom.id}>
             <Room room={hotelRoom} hotel={hotel.name}></Room>
           </div>
-        ))}
-        ;
+        ))) : (
+          <div className="block max-w-[100%] p-6 bg-white border border-gray-200 rounded-lg shadow my-6">
+            Không có phòng trống
+          </div>
+        )}
       </div>
     </div>
   );

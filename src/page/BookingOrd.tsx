@@ -243,7 +243,7 @@ export default function BookingOrd() {
             <img className="rounded-lg object-cover w-full" src={room.img} />
             <div className="flex flex-row mt-3 text-sm lg:text-md">
               <p className="font-bold">Diện tích: &nbsp;</p>
-              {roomType.area}
+              {roomType.area} m2
             </div>
             <p className="font-bold text-sm lg:text-md mt-3">Các tiện ích: </p>
             <div className="grid grid-cols-2 grid-row-1 mb-3 text-sm lg:text-md">
