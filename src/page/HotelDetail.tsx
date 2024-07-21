@@ -24,9 +24,16 @@ export default function HotelDetail() {
       });
   }, []);
 
+  const scrollToEmptyRooms = () => {
+    const emptyRoomsSection = document.getElementById("emptyRooms");
+    if (emptyRoomsSection) {
+      emptyRoomsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="flex justify-center">
-      <div className="flex-col w-[80%]">
+      <div className="flex-col w-[95%] lg:w-[80%]">
         <div className="flex justify-between my-7">
           <div>
             <h1 className="font-bold text-xl lg:text-2xl">{hotel.name}</h1>
@@ -42,7 +49,7 @@ export default function HotelDetail() {
             <Button
               type="primary"
               className="bg-[#d65b0f] w-[150px] lg:w-[240px] mt-3 text-md lg:text-xl h-[40px]"
-              //   onClick={scrollToEmptyRooms}
+              onClick={scrollToEmptyRooms}
             >
               {" "}
               Chọn phòng
@@ -89,7 +96,7 @@ export default function HotelDetail() {
         </div>
         {roomList.map((hotelRoom: any) => (
           <div key={hotelRoom.id}>
-            <Room room={hotelRoom}></Room>
+            <Room room={hotelRoom} hotel={hotel.name}></Room>
           </div>
         ))}
         ;

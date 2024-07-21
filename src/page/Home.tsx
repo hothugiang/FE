@@ -65,7 +65,7 @@ export default function Home() {
 
   return (
     <div className="flex justify-center">
-      <div className="w-[80%] pb-6 pt-10">
+      <div className="w-[95%] lg:w-[80%] pb-6 pt-10">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 pb-6">
           Danh sách khách sạn
         </h1>

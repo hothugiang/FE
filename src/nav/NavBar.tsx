@@ -58,7 +58,7 @@ export default function NavBar() {
 
   return (
     <Header className="bg-gray-800 flex justify-center">
-      <div className="sm:w-[80%] flex justify-between items-center">
+      <div className="w-[95%] lg:w-[80%] flex justify-between items-center">
         <a href="/">
           <img className="h-10 w-auto" src={logo} alt="Stayergoe" />
         </a>

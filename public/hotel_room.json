@@ -5,7 +5,7 @@
         "name": "Standard",
         "img": "../src/assets/room1.webp",
         "area": "22 - 26 m2",
-        "facilities": ["SINGLE_BEDROOM", "SOUND_PROOF"],
+        "facilities": ["Giường đơn", "Cách âm"],
         "room": [
             {
                 "id": "standard1",
@@ -31,7 +31,7 @@
         "name": "Superior",
         "img": "../src/assets/room2.webp",
         "area": "25 - 35 m2",
-        "facilities": ["DOUBLE_BEDROOM", "SOUND_PROOF"],
+        "facilities": ["Giường đôi", "Cách âm"],
         "room": [
             {
                 "id": "superior1",
@@ -43,7 +43,7 @@
             },
             {
                 "id": "superior2",
-                "name": "Superior Double - Twin",
+                "name": "Superior Double Twin",
                 "capacity": 4,
                 "area": 35,
                 "price": "4.235.839",
@@ -57,7 +57,7 @@
         "name": "Deluxe",
         "img": "../src/assets/twin.webp",
         "area": "40 - 50 m2",
-        "facilities": ["DOUBLE_BEDROOM", "SOUND_PROOF", "TELEVISION"],
+        "facilities": ["Giường đôi", "Cách âm", "Có ti vi"],
         "room": [
             {
                 "id": "deluxe1",
