@@ -104,7 +104,7 @@ const LoginModal = ({ visible, onCancel, onLogin, onSignup }: any) => {
                 type="primary"
                 className="mb-3"
                 htmlType="submit"
-                // onClick={onLogin}
+                onClick={onLogin}
               >
                 Đăng nhập
               </Button>

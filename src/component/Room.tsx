@@ -43,7 +43,7 @@ const Room = ({ room, hotel }: any) => {
             <tbody>
               {room.room.map((roomType: any) => (
                 <tr key={roomType.id} className="hover:bg-gray-200">
-                  <th scope="row" className="flex-col">
+                  <th scope="row" className="flex-col inline-block align-center">
                     <p className="px-6 pt-4 text-gray text-sm lg:text-lg">
                       {roomType.name}
                     </p>

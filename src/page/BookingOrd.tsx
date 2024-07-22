@@ -91,9 +91,9 @@ export default function BookingOrd() {
         </div>
 
         <div className="lg:grid grid-cols-3 gap-4">
-          <div className="lg:col-span-2 lg:grid grid-rows-5">
+          <div className="lg:col-span-2 lg:grid grid-rows-3">
             {/* Thông tin liên hệ */}
-            <div className="lg:row-span-3 bg-white shadow rounded-lg p-6 mb-3">
+            <div className="lg:row-span-2 bg-white shadow rounded-lg p-6 mb-3">
               <h1 className="font-bold text-lg lg:text-xl mb-4">
                 Thông tin liên hệ
               </h1>
@@ -149,7 +149,7 @@ export default function BookingOrd() {
               </div>
 
               {/* Email */}
-              <div className="mb-4">
+              <div>
                 <div className="flex flex-row gap-x-3 text-sm lg:text-md mb-3">
                   <label className="font-bold">Email</label>
                   {errors.email && (
@@ -178,7 +178,7 @@ export default function BookingOrd() {
             </div>
 
             {/* Chi tiết giá */}
-            <div className="lg:row-span-2 bg-white shadow rounded-lg p-6">
+            <div className="lg:row-span-1 bg-white shadow rounded-lg p-6">
               <h1 className="font-bold text-lg lg:text-xl mb-4">
                 Chi tiết giá
               </h1>
