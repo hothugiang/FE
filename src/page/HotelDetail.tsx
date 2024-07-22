@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { EnvironmentFilled, SearchOutlined } from "@ant-design/icons";
-import { Button, DatePicker } from "antd";
+import { Button, DatePicker, GetProps } from "antd";
 import Room from "../component/Room";
+import dayjs from "dayjs";
 
 const { RangePicker } = DatePicker;
+
+type RangePickerProps = GetProps<typeof RangePicker>;
 
 export default function HotelDetail() {
   const [data, setData] = useState([]);
@@ -31,6 +34,10 @@ export default function HotelDetail() {
     if (emptyRoomsSection) {
       emptyRoomsSection.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const disabledDate: RangePickerProps["disabledDate"] = (current) => {
+    return current && current < dayjs().endOf("day");
   };
 
   return (
@@ -83,7 +90,7 @@ export default function HotelDetail() {
         <div className="w-full flex justify-center">
           <div className="w-full flex justify-center">
             <div className="w-3/4">
-              <RangePicker className="w-full" />
+              <RangePicker disabledDate={disabledDate} className="w-full" />
             </div>
             <div className="w-1/4 ml-2">
               <Button
