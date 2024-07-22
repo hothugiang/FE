@@ -14,7 +14,7 @@ export default function App() {
           <Route path="/" Component={Home}></Route>
           <Route path="/hoteldetail/:hotelId" Component={HotelDetail} />
           <Route path="/bookingord/:roomId" Component={BookingOrd} />
-          <Route path="/confirmord" Component={ConfirmOrd} />
+          <Route path="/confirmord/:roomId" Component={ConfirmOrd} />
         </Routes>
       </BrowserRouter>
     </>

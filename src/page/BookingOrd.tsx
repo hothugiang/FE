@@ -1,6 +1,6 @@
 import { Input, DatePicker, Button } from "antd";
 import { useForm, Controller } from "react-hook-form";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import type { GetProps } from "antd";
 import dayjs, { Dayjs } from "dayjs";
 import { useState, useEffect } from "react";
@@ -18,18 +18,12 @@ type FormFields = {
 
 export default function BookingOrd() {
   const location = useLocation();
+  const navigate = useNavigate();
   const { room, roomType, hotel } = location.state || {};
   const [price, setPrice] = useState<string>("0");
   const [fee, setFee] = useState<string>("0");
   const [total, setTotal] = useState<string>("0");
-
-  useEffect(() => {
-    if (roomType.cancelFee) {
-      setFee('100.000');
-    } else {
-      setFee('0');
-    }
-  }, [roomType.cancelFee]);
+  const [formData, setFormData] = useState<FormFields | null>(null);
 
   const {
     control,
@@ -40,6 +34,8 @@ export default function BookingOrd() {
 
   const onSubmit = (data: FormFields) => {
     console.log("Form Data:", data);
+    setFormData(data);
+    console.log(formData);
   };
 
   const disabledDate: RangePickerProps["disabledDate"] = (current) => {
@@ -49,7 +45,7 @@ export default function BookingOrd() {
   const handleRangeChange = (dates: [Dayjs | null, Dayjs | null] | null) => {
     if (dates) {
       const [start, end] = dates;
-      const diffDays = start && end ? end.diff(start, "day") : 0;
+      const diffDays = start && end ? end.diff(start, "day") + 1 : 0;
       console.log(`${diffDays} ngày`);
       setValue("duration", dates);
 
@@ -58,18 +54,29 @@ export default function BookingOrd() {
       const formattedStr = num.toLocaleString("vi-VN");
       setPrice(formattedStr);
 
-      const feenum = Number(fee.replace(/\./g, "")) * diffDays;
+      let serviceFee = "100.000";
+      if (!roomType.cancelFee) {
+        serviceFee = "0";
+      }
+      const feenum = Number(serviceFee.replace(/\./g, "")) * diffDays;
       const formattedFee = feenum.toLocaleString("vi-VN");
       setFee(formattedFee);
 
       const totalNum = num + feenum;
       const formattedTotal = totalNum.toLocaleString("vi-VN");
       setTotal(formattedTotal);
-
     } else {
       setValue("duration", [null, null]);
     }
   };
+
+  useEffect(() => {
+    if (formData) {
+      navigate(`/confirmord/${roomType.id}`, {
+        state: { roomType, room, hotel, price, fee, total, formData },
+      });
+    }
+  }, [formData, navigate, roomType.id, roomType, room, hotel, price, fee, total]);
 
   return (
     <form className="flex justify-center" onSubmit={handleSubmit(onSubmit)}>
@@ -92,8 +99,8 @@ export default function BookingOrd() {
               </h1>
 
               {/* Full Name */}
-              <div className="mb-3">
-                <div className="flex flex-row gap-x-3 text-sm lg:text-md">
+              <div className="mb-4">
+                <div className="flex flex-row gap-x-3 text-sm lg:text-md mb-3">
                   <label className="font-bold">Họ và tên</label>
                   {errors.fullName && (
                     <p className="text-red-700">{errors.fullName.message}</p>
@@ -114,8 +121,8 @@ export default function BookingOrd() {
               </div>
 
               {/* Phone Number */}
-              <div className="mb-3">
-                <div className="flex flex-row gap-x-3 text-sm lg:text-md">
+              <div className="mb-4">
+                <div className="flex flex-row gap-x-3 text-sm lg:text-md mb-3">
                   <label className="font-bold">Số điện thoại</label>
                   {errors.phoneNumber && (
                     <p className="text-red-700">{errors.phoneNumber.message}</p>
@@ -142,8 +149,8 @@ export default function BookingOrd() {
               </div>
 
               {/* Email */}
-              <div className="mb-3">
-                <div className="flex flex-row gap-x-3 text-sm lg:text-md">
+              <div className="mb-4">
+                <div className="flex flex-row gap-x-3 text-sm lg:text-md mb-3">
                   <label className="font-bold">Email</label>
                   {errors.email && (
                     <p className="text-red-700">{errors.email.message}</p>
@@ -175,15 +182,15 @@ export default function BookingOrd() {
               <h1 className="font-bold text-lg lg:text-xl mb-4">
                 Chi tiết giá
               </h1>
-              <div className="flex flex-row justify-between mb-3 text-sm lg:text-md">
+              <div className="flex flex-row justify-between mb-4 text-sm lg:text-md">
                 <p className="font-bold">Tổng giá phòng:</p>
                 <p>{price}</p>
               </div>
-              <div className="flex flex-row justify-between mb-3 text-sm lg:text-md">
+              <div className="flex flex-row justify-between mb-4 text-sm lg:text-md">
                 <p className="font-bold">Phí dịch vụ:</p>
                 <p>{fee}</p>
               </div>
-              <div className="flex flex-row justify-between mb-3 text-sm lg:text-md">
+              <div className="flex flex-row justify-between text-sm lg:text-md">
                 <p className="font-bold">Tổng:</p>
                 <p className="text-[#bb6060] font-bold">{total}</p>
               </div>
@@ -240,7 +247,10 @@ export default function BookingOrd() {
               />
             </div>
 
-            <img className="rounded-lg object-cover w-full" src={room.img} />
+            <img
+              className="rounded-lg object-cover w-full h-[40%]"
+              src={room.img}
+            />
             <div className="flex flex-row mt-3 text-sm lg:text-md">
               <p className="font-bold">Diện tích: &nbsp;</p>
               {roomType.area} m2
@@ -252,7 +262,7 @@ export default function BookingOrd() {
               ))}
             </div>
 
-            <div className="flex flex-row mb-3 text-sm lg:text-md">
+            <div className="flex flex-row text-sm lg:text-md">
               <p className="font-bold">Đơn giá: &nbsp;</p>
               <p className="text-[#bb6060] font-bold">
                 {roomType.price} VND/ngày
